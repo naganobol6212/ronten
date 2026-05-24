@@ -60,6 +60,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
+# DRF: Phase 2 学習用に認証を外している。本番では必ず IsAuthenticated 等に変更
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [],
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
+}
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [

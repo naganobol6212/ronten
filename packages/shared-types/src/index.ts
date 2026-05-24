@@ -13,3 +13,11 @@ export interface Summary {
 }
 
 export type SummaryCreateInput = Pick<Summary, "what" | "why" | "so_what">;
+
+/**
+ * GET /api/summaries/ のレスポンス型。
+ * 現状ページネーションなしなので Summary[] と等価。
+ * 将来 DRF の PageNumberPagination を入れたら
+ * { count, next, previous, results } 型に差し替える。
+ */
+export type SummaryListResponse = Summary[];
